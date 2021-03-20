@@ -26,29 +26,29 @@ parser = OptionParser(prog='HiTranslator Writer',
 #是否手动引入SDK,是否完整回显,
 #日志级别
 
-parser.add_option("-pd", "--projectdir",
-                 dest="工程根目录",
+parser.add_option("-p", "--projectdir",
+                 dest="Dir",
                 help="工程根目录")                
-parser.add_option("-htp", "--htproject",
-                 dest="HT工程根目录",
-                help="HT工程根目录,留空则定位于工程根目录下的HTProject文件夹.")       
-parser.add_option("-f", "--first",
-                 dest="是否首次", default='True',
+parser.add_option("-t", "--htproject",
+                 dest="Dir",
+                help="HT工程")       
+parser.add_option("-s", "--first",
+                 dest="T/F", default='True',
                 help="是否首次")
-parser.add_option("-isa", "--issave",
-                 dest="是否已注释方式将翻译信息保存至文件", default="False",
+parser.add_option("-a", "--issave",
+                 dest="T/F", default="False",
                 help="是否已注释方式将翻译信息保存至文件")                
-parser.add_option("-full", "--isfullfunc",
-                 dest="完整/直接trs函数", default='False',
+parser.add_option("-f", "--isfullfunc",
+                 dest="T/F", default='False',
                 help="完整/直接trs函数")
-parser.add_option("-isd", "--isautosdk",
-                 dest="是否手动引入SDK",
+parser.add_option("-d", "--isautosdk",
+                 dest="T/F",
                 help="是否手动引入SDK")
-parser.add_option("-ifb", "--isfullback",
-                 dest="是否完整回显",
+parser.add_option("-b", "--isfullback",
+                 dest="T/F",
                 help="是否完整回显")
-parser.add_option("-log", "--loglevel",
-                 dest="日志级别",
+parser.add_option("-g", "--loglevel",
+                 dest="Level",
                 help="日志级别")                            
 (options, args) = parser.parse_args()
 
