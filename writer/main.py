@@ -1,6 +1,5 @@
 #usr/bin/python3
 import os
-import init
 import sys
 from optparse import OptionParser
 from optparse import IndentedHelpFormatter
@@ -8,7 +7,7 @@ from pyfiglet import Figlet
 import pickle
 
 
-
+print(Figlet(font='slant').renderText('HiTranslator'))
 class NoWrapFormatter(IndentedHelpFormatter) :
     def _format_text(self, text) :
         "[Does not] format a text, return the text as it is."
@@ -51,6 +50,5 @@ parser.add_option("-ifb", "--isfullback",
 parser.add_option("-log", "--loglevel",
                  dest="日志级别",
                 help="日志级别")                            
-                                
 (options, args) = parser.parse_args()
 
