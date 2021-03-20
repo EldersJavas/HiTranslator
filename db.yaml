@@ -1,0 +1,17 @@
+mysql:
+    host: 127.0.1.1   # ip
+    user: test        # 用户名
+    port: 3306        # 端口
+    db: test
+    password: pw
+
+redis:
+    host: 127.0.0.1
+    port: 3679
+    db: 0
+    pwd: 3435
+
+db_ip:
+    - 192.168.0.1
+    - 192.168.0.2
+    - 192.168.0.2
