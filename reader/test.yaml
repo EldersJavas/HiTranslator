@@ -1,0 +1,31 @@
+HiTranslator :
+  Project :
+    Owner :
+      - eldersjavas@gmail.com
+      - maicarons@outlook.com
+    Member :
+      - eldersjavas@gmail.com
+      - maicarons@outlook.com
+    BuildTime: 2021-03-20
+    ProVersion : 1.0
+    HTVersion : 1.0
+    SourceNumber: 2
+    Checker: 
+      - eldersjavas@gmail.com
+  Source :
+    1 :
+      ID: 1
+      Source : Hello
+      Translate : 你好
+      Translator : eldersjavas@gmail.com
+      TranTime : 2021-03-20
+      IsCheck : T
+    2 :
+      ID: 2
+      Source : Welcome
+      Translate : 欢迎
+      Translator : eldersjavas@gmail.com
+      TranTime : 2021-03-20
+      IsCheck : T
+    
+    

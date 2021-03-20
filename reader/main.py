@@ -1,8 +1,8 @@
 #usr/bin/python3
 
 import os
-import init
 import sys
+import pickle
 from optparse import OptionParser
 from optparse import IndentedHelpFormatter
 from pyfiglet import Figlet
@@ -28,40 +28,53 @@ parser = OptionParser(prog='HiTranslator Reader',
 #自定义指定/排除函数规则,自定义指定/排除字符串规则,
 #工程根目录,HT工程根目录,强制使用格式
 
-parser.add_option("-rl", "--rlang",
-                 dest="源语言", default="en",
+parser.add_option("-r", "--rlang",
+                 dest="rlang", default="en",
                 help="Language which used by project")
-
-parser.add_option("-pl", "--plang",
-                 dest="程序语言/自定义语言规则",
+parser.add_option("-a", "--plang",
+                 dest="plang",
                 help="程序语言/自定义语言规则")
 parser.add_option("-f", "--first",
-                 dest="是否首次", default='True',
+                 dest="first", default='True',
                 help="是否首次")
-parser.add_option("-trs", "--istrs",
-                 dest="是否已部署trs函数", default='False',
+parser.add_option("-t", "--istrs",
+                 dest="istrs", default='False',
                 help="是否已部署trs函数")                
-parser.add_option("-id", "--isid",
-                 dest="trs函数是否带ID", default='False',
+parser.add_option("-i", "--isid",
+                 dest="isid", default='False',
                 help="trs函数是否带ID")
-parser.add_option("-fun", "--funcrrule",
-                 dest="自定义指定/排除函数规则",
+parser.add_option("-d", "--funcrrule",
+                 dest="funcrrule",
                 help="自定义指定/排除函数规则")
-parser.add_option("-str", "--stringrule",
-                 dest="自定义指定/排除字符串规则",
+parser.add_option("-s", "--stringrule",
+                 dest="stringrule",
                 help="自定义指定/排除字符串规则")
-parser.add_option("-pd", "--projectdir",
-                 dest="工程根目录",
+parser.add_option("-p", "--projectdir",
+                 dest="projectdir",
                 help="工程根目录")                
-parser.add_option("-htp", "--htproject",
-                 dest="HT工程根目录",
+parser.add_option("-o", "--htproject",
+                 dest="htproject",
                 help="HT工程根目录")                
-parser.add_option("-qz", "--qzfommat",
-                 dest="强制使用格式", default='False',
+parser.add_option("-q", "--qzfommat",
+                 dest="qzfommat", default='F',
                 help="强制使用格式")                
                                 
-(options, args) = parser.parse_args()
-
+#(options, args) = parser.parse_args()
+#opt=options
+print(type(parser.parse_args()).__name__)
+#######
+#print(options['rlang'])
+#rlang=options['rlang']
+#plang=options["plang"]
+#first=options["first"]
+#istrs=options["istrs"]
+#isid=options["isid"]
+#funcrrule=options["funcrrule"]
+#stringrule=options["stringrule"]
+#projectdir=options["projectdir"]
+#htproject=opt.get('htproject')
+#print(opt.items())
+#qzfommat=options["qzfommat"]
 
 
 

@@ -1,4 +1,5 @@
-#usr/bin/python3
+#!/usr/bin/python3
+#-*- encoding:utf-8 -*-
 import os
 import sys
 from optparse import OptionParser
@@ -8,6 +9,7 @@ import pickle
 
 
 print(Figlet(font='slant').renderText('HiTranslator'))
+
 class NoWrapFormatter(IndentedHelpFormatter) :
     def _format_text(self, text) :
         "[Does not] format a text, return the text as it is."
