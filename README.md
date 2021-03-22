@@ -1,7 +1,8 @@
-# HiTranslator
+# HeyTranser
+
 workspace
 
 - writer
--reader
+- reader
 
-HiTranslator
+HeyTranser

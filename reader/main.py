@@ -8,16 +8,16 @@ from optparse import IndentedHelpFormatter
 from pyfiglet import Figlet
 
 
-print(Figlet(font='slant').renderText('HiTranslator'))
+print(Figlet(font='slant').renderText('HeyTranser'))
 
 class NoWrapFormatter(IndentedHelpFormatter) :
     def _format_text(self, text) :
         "[Does not] format a text, return the text as it is."
         return text
 
-parser = OptionParser(prog='HiTranslator Reader',
+parser = OptionParser(prog='HeyTranser Reader',
                               usage="",
-                              description="HiTranslator Reader",
+                              description="HeyTranser Reader",
                               version="1.0",
                               formatter=NoWrapFormatter(),
                               epilog="""Thanks for using!

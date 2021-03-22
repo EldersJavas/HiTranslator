@@ -8,16 +8,16 @@ from pyfiglet import Figlet
 import pickle
 
 
-print(Figlet(font='slant').renderText('HiTranslator'))
+print(Figlet(font='slant').renderText('HeyTranser'))
 
 class NoWrapFormatter(IndentedHelpFormatter) :
     def _format_text(self, text) :
         "[Does not] format a text, return the text as it is."
         return text
 
-parser = OptionParser(prog='HiTranslator Writer',
+parser = OptionParser(prog='HeyTranser Writer',
                               usage="",
-                              description="HiTranslator Writer",
+                              description="HeyTranser Writer",
                               version="1.0",
                               formatter=NoWrapFormatter(),
                               epilog="""Thanks for using!

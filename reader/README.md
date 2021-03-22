@@ -1,2 +1,2 @@
-# HiTranslator
- HiTranslator
+# HeyTranser
+ HeyTranser
