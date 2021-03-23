@@ -1,0 +1,59 @@
+IsNew: true
+ProjectConfig:
+  Author: []
+  BuildTime: ''
+  Contributor: []
+  HTVersion: '1.0'
+  HTsite: ''
+  IsClock: false
+  IsFinish: false
+  LastChange: ''
+  License: ''
+  Member: []
+  NeedCheck: true
+  PVersion: ''
+  ProjectLocal: ..
+  ProjectName: ''
+  ResoureLanguage: ''
+  Website: ''
+  describtion: ''
+Res:
+- Item:
+    CheckTime: ''
+    Checker: []
+    ID: 1
+    IsClock: false
+    Resource: ''
+    Tag: ''
+    TransResource: {}
+    TransTime: ''
+    Translator: []
+- Item:
+    CheckTime: ''
+    Checker: []
+    ID: 2
+    IsClock: false
+    Resource: ''
+    Tag: ''
+    TransResource: {}
+    TransTime: ''
+    Translator: []
+- Item:
+    CheckTime: ''
+    Checker: []
+    ID: 3
+    IsClock: false
+    Resource: ''
+    Tag: ''
+    TransResource: {}
+    TransTime: ''
+    Translator: []
+Rule:
+  Custom:
+    func: []
+    string: []
+  CustomFile: ''
+  ReaderRule: []
+  ReaderRuleFile: ''
+  WriterRule: []
+  WriterRuleFile: ''

@@ -1,3 +1,5 @@
+import yaml
+import os
 class HTProject :
     """
     HTProject class
@@ -26,16 +28,6 @@ class HTProject :
 
 
     class TranItem :
-        
-        Item={
-            'Resource':'',
-            'TransResource':{},
-            'Tag':'',
-            'Translator':[],
-            'TransTime':'',
-            'IsClock':False,
-            'Checker':[],
-            'CheckTime':''}
 
         def UpdateRes(self):
             """
@@ -48,7 +40,22 @@ class HTProject :
             """    
             self.Item['Tag']=ntag
             return ac
-            
+
+        def __init__(self,ID):
+            """
+            docstring
+            """
+            self.Item={
+                'ID':ID,
+                'Resource':'',
+                'TransResource':{},
+                'Tag':'',
+                'Translator':[],
+                'TransTime':'',
+                'IsClock':False,
+                'Checker':[],
+                'CheckTime':''
+                }        
 
         #def __init__() :
             
@@ -103,8 +110,8 @@ class HTProject :
 
     def AddRes(self,ID='',ac=False) :
         if ID == "" :
-            
-            self.Res.append()               
+            self.Res.append(self.TranItem(len(self.Res) + 1).__dict__)    
+            print(self.Res)           
         return ac
 
     def DelRes(self,ID='',Name='',ac=False):
@@ -163,14 +170,21 @@ class HTProject :
 
 h=HTProject(True)
 
-print(h.__dict__)
-print(h.__doc__)
-print(h.ChangeConfig({'ResoureLanguage':'Hello'}))
-print(h.ProjectConfig)
-print(h.Rule)
-print(h.Res)
+#print(h.__dict__)
+#print(h.__doc__)
+#print(h.ChangeConfig({'ResoureLanguage':'Hello'}))
+#print(h.ProjectConfig)
+#print(h.Rule)
+#print(h.Res)
 
+h.AddRes()
+h.AddRes()
+h.AddRes()
+#f = open(r"testProject.yaml",encoding='utf-8')
+#data = f.read()
 
-f = open(r"E:\workspace\HiTranslator\HiTranslator\reader\testfile\test.yaml",encoding='utf-8')
-data = f.read()
-print(yaml.load(data))
+print(yaml.safe_dump(h.__dict__))
+f= open("test.yaml","w+")
+f.write(yaml.safe_dump(h.__dict__))
+f.close
+#print(yaml.load(data))
