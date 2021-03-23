@@ -114,6 +114,22 @@ class HTProject :
             print(self.Res)           
         return ac
 
+    def Temp_Find_TransRes(self,temp,ID='',Res='',lang='en'):
+        if ID!='':
+            for i in self.Res:
+                if i['Item']['ID']==ID:
+                    return i['Item']['TransResource'][lang]
+                else:
+                    return "Not Found(ID)"
+        elif Res!='':
+            for i in self.Res:
+                if i['Item']['Resource']==Res:
+                    return i['Item']['TransResource'][lang]
+                else:
+                    return "Not Found(OrginRes)"
+        else:
+            return "Not Found(ID or OrginRes Empty)"
+
     def DelRes(self,ID='',Name='',ac=False):
         if ID != '' :
             del self.Res[ID]
@@ -180,6 +196,7 @@ h=HTProject(True)
 h.AddRes()
 h.AddRes()
 h.AddRes()
+
 #f = open(r"testProject.yaml",encoding='utf-8')
 #data = f.read()
 
