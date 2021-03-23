@@ -4,12 +4,14 @@
 import os
 import os.path
 import pickle
-def get_rule(rulefile string):
+
+def get_rule(rulefile):
     f=open(rulefile)
     str=f.read()
     rule=str.split(sep=",",maxsplit=9)
     return rule
-def read(dir srting,lang string,type string) string:    
+
+def read(dir,lang,type):    
 
     """获取指定目录及其子目录下的 py 文件路径
     说明：
