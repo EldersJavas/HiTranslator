@@ -61,7 +61,89 @@ parser.add_option("-q", "--qzfommat",
                                 
 #(options, args) = parser.parse_args()
 #opt=options
-print(type(parser.parse_args()).__name__)
+type(parser.parse_args())                       
+(options, args) = parser.parse_args()
+
+
+
+values=options.__dict__
+def CheckValue(values):
+    """
+    values
+    """
+    if values['rlang']=='' :
+        print("Error")
+        exit()
+    elif values['plang']=='':
+        print("Error")
+        exit()
+    elif values['first']=='':
+        print("Error")
+        exit()
+    elif values['istrs']=='':
+        print("Error")
+        exit()
+    elif values['isid']=='':
+        print("Error")
+        exit()
+    elif values['funcrrule']=='':
+        print("Error")
+        exit()
+    elif values['stringrule']=='':
+        print("Error")
+        exit()
+    elif values['projectdir']=='':
+        print("Error")
+        exit()
+    elif values['htproject']=='':
+        print("Error")
+        exit()
+    elif values['qzfommat']=='':
+        print("Error")
+        exit()
+    else:
+        StartStep1(values)
+
+
+def StartStep1(values):
+    """
+    Step1
+    """
+    print("Step1 Starting...")
+
+
+
+
+    print("Step1 Finished.")
+    pass
+
+
+def StartStep2(values):
+    """
+    Step2
+    """
+    print("Step2 Starting...")
+
+
+
+
+    print("Step2 Finished.")    
+    pass
+
+
+def StartStep3(values):
+    """
+    Step3
+    """
+    print("Step3 Starting...")
+
+
+
+
+    print("Step3 Finished.")
+    pass
+
+
 #######
 #print(options['rlang'])
 #rlang=options['rlang']

@@ -51,6 +51,16 @@ parser.add_option("-b", "--isfullback",
                 help="是否完整回显")
 parser.add_option("-g", "--loglevel",
                  dest="Level",
-                help="日志级别")                            
+                help="日志级别")     
+type(parser.parse_args())                       
 (options, args) = parser.parse_args()
 
+values=options.__dict__
+def CheckValue(values):
+    """
+    values
+    """
+    if values['']=='' :
+        pass
+    else:
+        pass
