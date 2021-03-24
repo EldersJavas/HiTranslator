@@ -203,5 +203,17 @@ h.AddRes()
 print(yaml.safe_dump(h.__dict__))
 f= open("test.yaml","w+")
 f.write(yaml.safe_dump(h.__dict__))
-f.close
+f.close()
+
+
+
+
+
+
+
+
+
+
+
+
 #print(yaml.load(data))
