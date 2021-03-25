@@ -1,4 +1,5 @@
 import yaml
+import json
 import os
 class HTProject :
     """
@@ -205,3 +206,20 @@ f= open("test.yaml","w+")
 f.write(yaml.safe_dump(h.__dict__))
 f.close
 #print(yaml.load(data))
+#先将yaml转换为dict格式
+readyjson={
+    'Resource':h.__dict__['Res'],
+    'Contributor':h.__dict__['ProjectConfig']['Contributor'],
+    'Author':h.__dict__['ProjectConfig']['Author'],
+    'Member':h.__dict__['ProjectConfig']['Member'],
+    'ProjectName':h.__dict__['ProjectConfig']['ProjectName']
+        }
+
+
+generate_json =json.dumps(readyjson,sort_keys=False,indent=4,separators=(',',': '))
+
+print(readyjson,type(readyjson))
+
+f1 = open("test.json","w+")
+f1.write(generate_json)
+f1.close

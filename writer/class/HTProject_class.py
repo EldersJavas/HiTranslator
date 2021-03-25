@@ -11,12 +11,6 @@ class HTProject :
     
  #   def Crate(self,con) :   
 #        Item[con]=self.
-
-    
-
-    
-    
-       
 #    def __init__(self,IsNew,ProjectName, ResoureLanguage, Author,Member,Contributor,HTVersion,PVersion, BuildTime, LastChange, License, describtion, Website, HTsite, ProjectLocal,IsClock,IsFinish,NeedCheck) :
  #       if (IsNew) :
   #          self.ProjectName=ProjectName
@@ -31,19 +25,19 @@ class HTProject :
 
         def UpdateRes(self):
             """
-            docstring
+            更新翻译文本数据,并改变tag
             """
             
         def ChangeTag(self,ntag,ac=False):
             """
-            Tag change
+            更改tag
             """    
             self.Item['Tag']=ntag
             return ac
 
         def __init__(self,ID):
             """
-            docstring
+            构造函数
             """
             self.Item={
                 'ID':ID,
@@ -64,6 +58,9 @@ class HTProject :
 
 
     def ChangeCustom(self,Cf=[],Cs=[]):
+        """
+        修改自定义规则(后置)
+        """
         if Cf!=[]:
             self.Rule['Custom']['func']==Cf
             if Cs!=[]:
@@ -72,6 +69,9 @@ class HTProject :
                 return False
         
     def ChangeRule(self,chance,ac=False):
+        """
+        修改规则_前置函数
+        """
         for i in chance.keys():
             #print(i)
             if (chance[i]!='') :
@@ -95,11 +95,14 @@ class HTProject :
             
     def LoadProject(self, file):
         """
-        LoadProject
+        从文件加载工程
         """
         open(file)        
 
     def ChangeConfig(self,chance,ac=False) :
+        """
+        修改工程信息
+        """
         for i in chance.keys():
             #print(i)
             if (chance[i]!='') :
@@ -109,12 +112,18 @@ class HTProject :
         return ac
 
     def AddRes(self,ID='',ac=False) :
+        """
+        添加新条目数据
+        """
         if ID == "" :
             self.Res.append(self.TranItem(len(self.Res) + 1).__dict__)    
             print(self.Res)           
         return ac
 
     def Temp_Find_TransRes(self,temp,ID='',Res='',lang='en'):
+        """
+        临时获取翻译后数据
+        """
         if ID!='':
             for i in self.Res:
                 if i['Item']['ID']==ID:
@@ -131,12 +140,18 @@ class HTProject :
             return "Not Found(ID or OrginRes Empty)"
 
     def DelRes(self,ID='',Name='',ac=False):
+        """
+        删除条目数据
+        """
         if ID != '' :
             del self.Res[ID]
         else:
             self.Res.remove(Name)
 
     def UpdateRes(self,NRes,ID='',ORes='',ac=False):
+        """
+        更新条目数据
+        """
         if ID=='':
             self.Res[ID]
         else:
@@ -147,6 +162,9 @@ class HTProject :
                     return "Error Find Resource"
         
     def __init__(self,IsNew,file=''):
+        """
+        构造函数
+        """
         if (IsNew):
             self.IsNew=IsNew
             self.ProjectConfig={
@@ -199,7 +217,6 @@ h.AddRes()
 
 #f = open(r"testProject.yaml",encoding='utf-8')
 #data = f.read()
-
 print(yaml.safe_dump(h.__dict__))
 f= open("test.yaml","w+")
 f.write(yaml.safe_dump(h.__dict__))
