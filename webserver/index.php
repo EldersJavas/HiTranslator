@@ -15,8 +15,11 @@
 
 <?php
 
-
-
+if (_GET['Res']=='') {
+    echo "None Resource"; 
+}else {
+    base64_decode(_GET['Res']);
+} 
 
 
 

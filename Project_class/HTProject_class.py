@@ -1,6 +1,7 @@
 import yaml
 import json
 import os
+import xmltodict
 class HTProject :
     """
     HTProject class
@@ -207,7 +208,7 @@ f.write(yaml.safe_dump(h.__dict__))
 f.close
 #print(yaml.load(data))
 #先将yaml转换为dict格式
-readyjson={
+readydict={
     'Resource':h.__dict__['Res'],
     'Contributor':h.__dict__['ProjectConfig']['Contributor'],
     'Author':h.__dict__['ProjectConfig']['Author'],
@@ -216,10 +217,16 @@ readyjson={
         }
 
 
-generate_json =json.dumps(readyjson,sort_keys=False,indent=4,separators=(',',': '))
+generate_json =json.dumps(readydict,sort_keys=False,indent=4,separators=(',',': '))
 
-print(readyjson,type(readyjson))
+print(readydict,type(readydict))
 
 f1 = open("test.json","w+")
 f1.write(generate_json)
 f1.close
+
+
+xml_str = xmltodict.unparse({'xml':readydict}, pretty=True)
+fxml = open("test.xml","w+")
+fxml.write(xml_str)
+fxml.close
