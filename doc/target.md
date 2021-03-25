@@ -56,10 +56,10 @@
 
     ## 目标
 
-    - [ ] 使用标准项目文件
+    - [x] 使用标准项目文件
     - [ ] 本体功能
       - [ ] 转换
-        - [ ] `json`
+        - [x] `json`
         - [ ] `xml`
         - [ ] `yaml`
         - [ ] `ini`
@@ -93,82 +93,69 @@
 - # Transtar
 
     ## 简介
-    非核心组件
 
-    使用`election`开发的`GUI`翻译系统项目.
+    非核心组件.
 
+    使用`election`开发的`GUI`翻译IDE.
+
+    <b>本项目为`HeyTranser`工程主力项目.</b>
+    
     ## 目标
 
-    - [ ] 使用标准项目文件
-    - [ ] 本体功能
-      - [ ] 修改代码
-      - [ ] 格式化代码 
-    - [ ] 使用标准规则
-    - [ ] 支持自定义规则
+    链接至项目
 
     ## 网址
 
-    Github:[HeyTranser/Reader]()<br>
-    Gitee:[HeyTranser/Reader]()
+    Github:[HeyTranser/Transtar]()<br>
+    Gitee:[HeyTranser/Transtar]()
 
 - # Starter
 
     ## 简介
-    `HeyTranser`核心组件.
+    非核心组件.
 
-    对代码进行修改的组件.
+    一个简易的`GUI`管理项目.使用`Visual Basic`开发.
+
+    > 此项目开发目的主要是用于项目基本管理,并提供一个可视化的操作,便于非专业人员使用,并非翻译IDE.可兼容至`Windows XP`.
 
     ## 目标
 
     - [ ] 使用标准项目文件
     - [ ] 本体功能
-      - [ ] 修改代码
-      - [ ] 格式化代码 
+      - [ ] 可视化流程
+      - [ ] 可视化运行 
     - [ ] 使用标准规则
     - [ ] 支持自定义规则
 
     ## 网址
 
-    Github:[HeyTranser/Reader]()<br>
-    Gitee:[HeyTranser/Reader]()
+    Github:[HeyTranser/Starter]()<br>
+    Gitee:[HeyTranser/Starter]()
     
-- # HT SmartBrain
+- # HT SmartBrain of Programming
 
     ## 简介
-    `HeyTranser`核心组件.
+    此处指的是`SmartBrain`的由`Programming`小组负责的部分.
 
-    对代码进行修改的组件.
-
+    人工智能翻译推送系统.
     ## 目标
 
-    - [ ] 使用标准项目文件
-    - [ ] 本体功能
-      - [ ] 修改代码
-      - [ ] 格式化代码 
-    - [ ] 使用标准规则
-    - [ ] 支持自定义规则
+  见项目
 
     ## 网址
 
-    Github:[HeyTranser/Reader]()<br>
-    Gitee:[HeyTranser/Reader]()
-- # HT Database
+    Github:[HeyTranser/SmartBrain]()<br>
+    Gitee:[HeyTranser/SmartBrain]()
+- # HT Database of Programming
 
     ## 简介
-    `HeyTranser`核心组件.
+    此处指的是`SmartBrain`的由`Programming`小组负责的部分.
 
-    对代码进行修改的组件.
-
+  大数据翻译条目项目.
     ## 目标
 
-    - [ ] 使用标准项目文件
-    - [ ] 本体功能
-      - [ ] 修改代码
-      - [ ] 格式化代码 
-    - [ ] 使用标准规则
-    - [ ] 支持自定义规则
-
+    见项目
     ## 网址
 
-    Github:[HeyTranser/Reader]()<br>
-    Gitee:[HeyTranser/Reader]()
+    Github:[HeyTranser/Database]()<br>
+    Gitee:[HeyTranser/Database]()
