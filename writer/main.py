@@ -4,12 +4,20 @@ import os
 import sys
 from optparse import OptionParser
 from optparse import IndentedHelpFormatter
-from pyfiglet import Figlet
+#from pyfiglet import Figlet
 import pickle
 
 
-print(Figlet(font='slant').renderText('HeyTranser'))
-
+#print(Figlet(font='slant').renderText('HeyTranser'))
+"""
+    __  __          ______
+   / / / /__  __  _/_  __/________ _____  ________  _____
+  / /_/ / _ \/ / / // / / ___/ __ `/ __ \/ ___/ _ \/ ___/
+ / __  /  __/ /_/ // / / /  / /_/ / / / (__  )  __/ /
+/_/ /_/\___/\__, //_/ /_/   \__,_/_/ /_/____/\___/_/
+           /____/
+"""
+print(__doc__)
 class NoWrapFormatter(IndentedHelpFormatter) :
     def _format_text(self, text) :
         "[Does not] format a text, return the text as it is."
@@ -39,7 +47,7 @@ parser.add_option("-s", "--first",
                 help="是否首次")
 parser.add_option("-a", "--issave",
                  dest="T/F", default="False",
-                help="是否已注释方式将翻译信息保存至文件")                
+                help="是否以注释方式将翻译信息保存至文件")                
 parser.add_option("-f", "--isfullfunc",
                  dest="T/F", default='False',
                 help="完整/直接trs函数")
