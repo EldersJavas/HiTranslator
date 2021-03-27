@@ -1,11 +1,11 @@
 {
-    "Resource": [
-        {
+    "Resource": {
+        "1": {
             "Item": {
                 "ID": 1,
-                "Resource": "",
+                "Resource": "HeyTranser",
                 "TransResource": {},
-                "Tag": "",
+                "Tag": "UnTr",
                 "Translator": [],
                 "TransTime": "",
                 "IsClock": false,
@@ -13,12 +13,12 @@
                 "CheckTime": ""
             }
         },
-        {
+        "2": {
             "Item": {
                 "ID": 2,
-                "Resource": "",
+                "Resource": "Hello,World!",
                 "TransResource": {},
-                "Tag": "",
+                "Tag": "UnTr",
                 "Translator": [],
                 "TransTime": "",
                 "IsClock": false,
@@ -26,12 +26,12 @@
                 "CheckTime": ""
             }
         },
-        {
+        "3": {
             "Item": {
                 "ID": 3,
-                "Resource": "",
+                "Resource": "Welcome!",
                 "TransResource": {},
-                "Tag": "",
+                "Tag": "UnTr",
                 "Translator": [],
                 "TransTime": "",
                 "IsClock": false,
@@ -39,7 +39,7 @@
                 "CheckTime": ""
             }
         }
-    ],
+    },
     "Contributor": [],
     "Author": [],
     "Member": [],

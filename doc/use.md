@@ -99,7 +99,8 @@ Res:
     IsClock: false
     Resource: 'Hello World!'
     Tag: 'UnTr'
-    TransResource: {}
+    TransResource: 
+        zh-hans:
     TransTime: ''
     Translator: []
 

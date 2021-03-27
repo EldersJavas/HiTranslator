@@ -1,4 +1,3 @@
-IsNew: true
 ProjectConfig:
   Author: []
   BuildTime: ''
@@ -18,36 +17,39 @@ ProjectConfig:
   Website: ''
   describtion: ''
 Res:
-- Item:
-    CheckTime: ''
-    Checker: []
-    ID: 1
-    IsClock: false
-    Resource: ''
-    Tag: ''
-    TransResource: {}
-    TransTime: ''
-    Translator: []
-- Item:
-    CheckTime: ''
-    Checker: []
-    ID: 2
-    IsClock: false
-    Resource: ''
-    Tag: ''
-    TransResource: {}
-    TransTime: ''
-    Translator: []
-- Item:
-    CheckTime: ''
-    Checker: []
-    ID: 3
-    IsClock: false
-    Resource: ''
-    Tag: ''
-    TransResource: {}
-    TransTime: ''
-    Translator: []
+  1:
+    Item:
+      CheckTime: ''
+      Checker: []
+      ID: 1
+      IsClock: false
+      Resource: HeyTranser
+      Tag: UnTr
+      TransResource: {}
+      TransTime: ''
+      Translator: []
+  2:
+    Item:
+      CheckTime: ''
+      Checker: []
+      ID: 2
+      IsClock: false
+      Resource: Hello,World!
+      Tag: UnTr
+      TransResource: {}
+      TransTime: ''
+      Translator: []
+  3:
+    Item:
+      CheckTime: ''
+      Checker: []
+      ID: 3
+      IsClock: false
+      Resource: Welcome!
+      Tag: UnTr
+      TransResource: {}
+      TransTime: ''
+      Translator: []
 Rule:
   Custom:
     func: []

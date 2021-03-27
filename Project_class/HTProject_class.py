@@ -43,22 +43,26 @@ class HTProject :
             self.Item['Tag']=ntag
             return ac
 
-        def __init__(self,ID):
+        def __init__(self,ID,Resource):
             """
             docstring
             """
             self.Item={
                 'ID':ID,
-                'Resource':'',
+                'Resource':Resource,
                 'TransResource':{},
-                'Tag':'',
+                'Tag':'UnTr',
                 'Translator':[],
                 'TransTime':'',
                 'IsClock':False,
                 'Checker':[],
                 'CheckTime':''
                 }        
-
+        def Add_lang(self,str):
+            """
+            docstring
+            """
+            self.Item['TransResource'][str]=''
         #def __init__() :
             
     #def __init__() :
@@ -110,10 +114,13 @@ class HTProject :
 
         return ac
 
-    def AddRes(self,ID='',ac=False) :
+    def AddRes(self,resource,ID='',ac=False) :
         if ID == "" :
-            self.Res.append(self.TranItem(len(self.Res) + 1).__dict__)    
-            print(self.Res)           
+            self.Res.append(self.TranItem(len(self.Res) + 1,resource))    
+            #print(self.Res)
+        else:
+            self.Res.append(self.TranItem(ID,resource))
+            #self.Res['']            
         return ac
 
     def Temp_Find_TransRes(self,temp,ID='',Res='',lang='en'):
@@ -148,6 +155,20 @@ class HTProject :
                 else:
                     return "Error Find Resource"
         
+    def ReturnDict(self,back={}):
+        """
+        docstring
+        """
+        back={
+            'Res':{}
+        }
+        for i in self.Res:
+            back['Res'][i.__dict__['Item']['ID']]=i.__dict__
+
+        back['ProjectConfig']=self.__dict__['ProjectConfig']
+        back['Rule']=self.__dict__['Rule']
+        return back
+
     def __init__(self,IsNew,file=''):
         if (IsNew):
             self.IsNew=IsNew
@@ -165,6 +186,7 @@ class HTProject :
                 'describtion':'',
                 'Website':'',
                 'HTsite':'',
+                'TrLanguage:{},
                 'ProjectLocal':'..',
                 'IsClock':False,
                 'IsFinish':False,
@@ -188,32 +210,46 @@ class HTProject :
 
 h=HTProject(True)
 
-#print(h.__dict__)
+
 #print(h.__doc__)
 #print(h.ChangeConfig({'ResoureLanguage':'Hello'}))
 #print(h.ProjectConfig)
 #print(h.Rule)
 #print(h.Res)
 
-h.AddRes()
-h.AddRes()
-h.AddRes()
-
+h.AddRes("HeyTranser")
+h.AddRes("Hello,World!")
+h.AddRes("Welcome!")
+p=h.ReturnDict()
+print(p)
 #f = open(r"testProject.yaml",encoding='utf-8')
 #data = f.read()
 
-print(yaml.safe_dump(h.__dict__))
+
+print(yaml.safe_dump(p))
 f= open("test.yaml","w+")
-f.write(yaml.safe_dump(h.__dict__))
+f.write(yaml.safe_dump(p))
 f.close
 #print(yaml.load(data))
 #先将yaml转换为dict格式
+
+
+
+for idi in p['Res']:
+    del p['Res'][idi]['Item']['Tag']
+    del p['Res'][idi]['Item']['TransTime']
+    del p['Res'][idi]['Item']['IsClock']
+    del p['Res'][idi]['Item']['Checker']
+    del p['Res'][idi]['Item']['CheckTime']
+    #del p['Res'][idi]['Item']['TransResource']
+    p['Res'][idi]['Item']['TransResource']=p['Res'][idi]['Item']['TransResource'][]
+
 readydict={
-    'Resource':h.__dict__['Res'],
-    'Contributor':h.__dict__['ProjectConfig']['Contributor'],
-    'Author':h.__dict__['ProjectConfig']['Author'],
-    'Member':h.__dict__['ProjectConfig']['Member'],
-    'ProjectName':h.__dict__['ProjectConfig']['ProjectName']
+    'Resource':p['Res'],
+    'Contributor':p['ProjectConfig']['Contributor'],
+    'Author':p['ProjectConfig']['Author'],
+    'Member':p['ProjectConfig']['Member'],
+    'ProjectName':p['ProjectConfig']['ProjectName']
         }
 
 
