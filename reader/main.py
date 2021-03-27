@@ -5,11 +5,19 @@ import sys
 import pickle
 from optparse import OptionParser
 from optparse import IndentedHelpFormatter
-from pyfiglet import Figlet
+#from pyfiglet import Figlet
 
 
-print(Figlet(font='slant').renderText('HeyTranser'))
-
+#print(Figlet(font='slant').renderText('HeyTranser'))
+"""
+    __  __          ______
+   / / / /__  __  _/_  __/________ _____  ________  _____
+  / /_/ / _ \/ / / // / / ___/ __ `/ __ \/ ___/ _ \/ ___/
+ / __  /  __/ /_/ // / / /  / /_/ / / / (__  )  __/ /
+/_/ /_/\___/\__, //_/ /_/   \__,_/_/ /_/____/\___/_/
+           /____/
+"""
+print(__doc__)
 class NoWrapFormatter(IndentedHelpFormatter) :
     def _format_text(self, text) :
         "[Does not] format a text, return the text as it is."

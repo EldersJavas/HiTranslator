@@ -33,7 +33,7 @@ class HTProject :
 
         def UpdateRes(self):
             """
-            docstring
+            更新翻译数据
             """
             
         def ChangeTag(self,ntag,ac=False):
@@ -43,20 +43,21 @@ class HTProject :
             self.Item['Tag']=ntag
             return ac
 
-        def __init__(self,ID,Resource):
+        def __init__(self,ID,Resource,leastLang):
             """
             docstring
             """
             self.Item={
                 'ID':ID,
                 'Resource':Resource,
-                'TransResource':{},
+                'TransResource':{'leastLang':' '
+                },
                 'Tag':'UnTr',
                 'Translator':[],
-                'TransTime':'',
+                'TransTime':'0000/00/00',
                 'IsClock':False,
                 'Checker':[],
-                'CheckTime':''
+                'CheckTime':'0000/00/00'
                 }        
         def Add_lang(self,str):
             """
@@ -114,12 +115,12 @@ class HTProject :
 
         return ac
 
-    def AddRes(self,resource,ID='',ac=False) :
+    def AddRes(self,resource,leastLang,ID='',ac=False) :
         if ID == "" :
-            self.Res.append(self.TranItem(len(self.Res) + 1,resource))    
+            self.Res.append(self.TranItem(len(self.Res) + 1,resource,leastLang))    
             #print(self.Res)
         else:
-            self.Res.append(self.TranItem(ID,resource))
+            self.Res.append(self.TranItem(ID,resource,leastLang))
             #self.Res['']            
         return ac
 
@@ -186,7 +187,7 @@ class HTProject :
                 'describtion':'',
                 'Website':'',
                 'HTsite':'',
-                'TrLanguage:{},
+                'TrLanguage':{} ,
                 'ProjectLocal':'..',
                 'IsClock':False,
                 'IsFinish':False,
@@ -217,9 +218,9 @@ h=HTProject(True)
 #print(h.Rule)
 #print(h.Res)
 
-h.AddRes("HeyTranser")
-h.AddRes("Hello,World!")
-h.AddRes("Welcome!")
+h.AddRes("HeyTranser",leastLang)
+h.AddRes("Hello,World!",leastLang)
+h.AddRes("Welcome!",leastLang)
 p=h.ReturnDict()
 print(p)
 #f = open(r"testProject.yaml",encoding='utf-8')
@@ -234,7 +235,6 @@ f.close
 #先将yaml转换为dict格式
 
 
-
 for idi in p['Res']:
     del p['Res'][idi]['Item']['Tag']
     del p['Res'][idi]['Item']['TransTime']
@@ -242,7 +242,7 @@ for idi in p['Res']:
     del p['Res'][idi]['Item']['Checker']
     del p['Res'][idi]['Item']['CheckTime']
     #del p['Res'][idi]['Item']['TransResource']
-    p['Res'][idi]['Item']['TransResource']=p['Res'][idi]['Item']['TransResource'][]
+    p['Res'][idi]['Item']['TransResource']=p['Res'][idi]['Item']['TransResource']
 
 readydict={
     'Resource':p['Res'],
